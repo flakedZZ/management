@@ -59,7 +59,7 @@ public class Org_infoDAOImpl extends HibernateDaoSupport implements Org_infoDAO{
 		// TODO Auto-generated method stub
 		String queryString="select u from Org_info u";
 		List<Org_info> list=this.getHibernateTemplate().find(queryString);
-		return null;
+		return list;
 	}
 
 }

@@ -23,8 +23,11 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO{
 		//User result=(User) ((Query)this.getHibernateTemplate().find(hsql)).uniqueResult();
 
 		List <User> list=(List <User>) (this.getHibernateTemplate().find(hsql));
+		if(list.size()==1){
 		User result=(User)list.get(0);		
-		return result;
+		return result;}
+		else
+			return null;
 	}
 
 	@Override
@@ -51,11 +54,7 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO{
 		// TODO Auto-generated method stub
 		String queryString="select u from User u";
 		List<User> list=this.getHibernateTemplate().find(queryString);
-		
-			return list;
-		
-		
-		
+		return list;
 	}
 	
 

@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <!-- 我做的修改
-         1.头文件加了一个 isELIgnored=false
+         1.头文件加了一个 isELIgnored=faulse
          2.加了个CSS 名字为 JianJie.css
          3.用了个EL语句输出了数据字典里组织信息表里的一些信息
           -->

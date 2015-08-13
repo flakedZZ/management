@@ -18,42 +18,38 @@ public class Org_infoServiceImpl implements Org_infoService{
 	}
 	@Override
 	public void save(Org_info org) {
-		if(orgInfoDAO.findById(org.getOrg_id())!=null)
-		{
-			orgInfoDAO.save(org);
-		}
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public Org_info getStudentInfo(int id) {
-		
-		return  orgInfoDAO.getStudentInfo(id);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Org_info getStudentInfo(String org_name) {
-		
-		return orgInfoDAO.getStudentInfo(org_name);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public void delStudentInfo(int id) {
-		orgInfoDAO.delStudentInfo(id);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void update(Org_info org) {
-		if(orgInfoDAO.findById(org.getOrg_id())!=null)
-		{
-			orgInfoDAO.update(org);
-		}
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public Org_info findById(int id) {
 		// TODO Auto-generated method stub
-		return orgInfoDAO.findById(id);
+		return null;
 	}
 
 	@Override

@@ -21,7 +21,6 @@
         <resourceEdge source="superop" routing="0" target="superop.jsp" />
       </result>
     </action>
-    
   </package>
   <webResource name="index.jsp" path="/index.jsp" location="572,239" size="150,55" />
   <webResource name="failer.jsp" path="/failer.jsp" location="355,122" size="150,55" />

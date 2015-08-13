@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         
                     </div>
                     <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-                        <form class="am-form am-form-horizontal" action="registerUser.action">
+                        <form class="am-form am-form-horizontal" action="registerStuInfo.action">
                         
                         <div class="am-form-group">
                                 <label for="user-name" class="am-u-sm-3 am-form-label">
@@ -72,10 +72,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                          	           姓名 / Name
                                 </label>
                                 <div class="am-u-sm-9">
-                                    <input type="email" name="student_name" placeholder="姓名 / Name">
+                                    <input type="email" name="name" placeholder="姓名 / Name">
                                     <small>
                            	             输入你的名字，让我们记住你。
-                                    </small>     
+                                    </small>
                                 </div>
                             </div>
 
@@ -85,7 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                	     学号 / Student sno
                                 </label>
                                 <div class="am-u-sm-9">
-                                    <input type="email" name="student_number" placeholder="输入你的学号 / Sno">
+                                    <input type="email" name="sno" placeholder="输入你的学号 / Sno">
                                 </div>
                             </div>
                             <div class="am-form-group">
@@ -93,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                        		             电子邮件 / Email
                                 </label>
                                 <div class="am-u-sm-9">
-                                    <input type="email" name="student_email" placeholder="输入你的电子邮件 / Email">
+                                    <input type="email" name="email" placeholder="输入你的电子邮件 / Email">
                                     <small>
                                	         邮箱你懂得...
                                     </small>
@@ -105,7 +105,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                      		               电话 / Telephone
                                 </label>
                                 <div class="am-u-sm-9">
-                                    <input type="email" name="student_phone" placeholder="输入你的电话 / Telephone">
+                                    <input type="email" name="phone" placeholder="输入你的电话 / Telephone">
                                 </div>
                             </div>
 
@@ -114,7 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     QQ
                                 </label>
                                 <div class="am-u-sm-9">
-                                    <input type="email" name="student_qq" placeholder="输入你的QQ号码">
+                                    <input type="email" name="QQ" placeholder="输入你的QQ号码">
                                 </div>
                             </div>
 
@@ -126,7 +126,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                               	      专业 / Student Major
                                 </label>
                                 <div class="am-u-sm-9">
-                                    <input type="email" name="smajor" placeholder="输入你的专业 / Major ">
+                                    <input type="email" name="major" placeholder="输入你的专业 / Major ">
                                 </div>
                             </div>
 
@@ -135,7 +135,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             	        学院 / College
                                 </label>
                                 <div class="am-u-sm-9">
-                                    <select name="sdept">
+                                    <select name="xueyuan">
          					  <option  value="信息院">信息院</option>
          					  <option value="经管院">经管院</option>
          					  <option value="动资院">动资院</option>
@@ -160,7 +160,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                	     照片 / Student Photo
                                 </label>
                                 <div class="am-u-sm-9">
-                                    <input type="file" name="photo_path"/ >
+                                    <input type="file" name="file1"/ >
                                 </div>
                             </div>
 
@@ -170,9 +170,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                	     性别 / sex
                                 </label>
                                 <div class="am-u-sm-9">
-                                    <input type="radio" name="student_sex" value="男">男
+                                    <input type="radio" name="sex" value="男">男
                                     </input>
-                                    <input type="radio" name="student_sex" value="女">女
+                                    <input type="radio" name="sex" value="女">女
                                     </input>
                                 </div>
                             </div>

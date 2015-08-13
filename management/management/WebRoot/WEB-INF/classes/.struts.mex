@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="10,10" size="280,525">
+    <action name="login" location="47,271" size="150,146">
+      <result name="stusuccess">
+        <resourceEdge source="stusuccess" routing="0" target="index.jsp" />
+      </result>
+      <result name="opsuccess">
+        <resourceEdge source="opsuccess" routing="0" target="index.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+      <result name="SUCCESS">
+        <resourceEdge source="SUCCESS" routing="0" target="index.jsp" />
+      </result>
+      <result name="failer">
+        <resourceEdge source="failer" routing="0" target="failer.jsp" />
+      </result>
+      <result name="superop">
+        <resourceEdge source="superop" routing="0" target="superop.jsp" />
+      </result>
+    </action>
+    
+  </package>
+  <webResource name="index.jsp" path="/index.jsp" location="572,239" size="150,55" />
+  <webResource name="failer.jsp" path="/failer.jsp" location="355,122" size="150,55" />
+  <webResource name="superop.jsp" path="/superop.jsp" location="485,480" size="150,55" />
+</Struts2Diagram>
+

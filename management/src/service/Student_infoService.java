@@ -4,6 +4,8 @@ import java.util.List;
 
 import entity.Student_info;
 
+
+
 public interface Student_infoService {
 	void saveStu(Student_info stu);
 	Student_info getStu(int id,String name);

@@ -99,11 +99,8 @@ public class LoginAction {
 		Iterator<User> it=list.iterator();
 		while(it.hasNext()){
 			u=(User)it.next();
-			System.out.println(u.getUsername()+"       "+u.getPassword());
 			if(username.trim().equals(u.getUsername())&&password.trim().equals(u.getPassword())){
 				session.put("username", u.getUsername());
-				//根据学号将学生查出来
-				//并保存在session里面
 				Student_info stu=stuInfoService.getStu(u.getStudent_number());
 				session.put("student_name", stu.getStudent_name());
 				session.put("student_number", stu.getStudent_number());
@@ -114,7 +111,7 @@ public class LoginAction {
 				session.put("student_phone", stu.getStudent_phone());
 				session.put("student_qq", stu.getStudent_qq());
 				session.put("student_sex", stu.getStudent_sex());
-				//登录权限设置
+				
 				if(u.getFlag()==1){
 					session.put("pression", "student");
 					return "stusuccess";}
@@ -134,7 +131,6 @@ public class LoginAction {
 			}
 			
 		}
-		//前面若都中断不了，则后面返回登录失败
 		String page="failer";
 		return page;
 	}
