@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="entity.Student_info" table="student_info">
+  <id name="student_id" type="java.lang.Integer">
+   <column name="student_id"/>
+   <generator class="identity"/>
+  </id>
+  
+		
+  <property name="student_name" type="java.lang.String">
+	<column name="student_name">
+		<comment>学生姓名</comment>
+	</column>
+  </property>
+  <property name="student_number" type="java.lang.Integer">
+  	<column name="student_number">
+  		<comment>学号</comment>
+  	</column>
+  </property>
+  <property name="student_sex" type="java.lang.String">
+  	<column name="student_sex">
+  		<comment>学生性别</comment>
+  	</column>
+  </property>
+  <property name="student_qq" type="java.lang.Integer">
+  	<column name="student_qq">
+  		<comment>学生QQ</comment>
+  	</column>
+  </property>
+  <property name="student_phone" type="java.lang.Integer">
+  	<column name="student_phone">
+  		<comment>学生电话号码</comment>
+  	</column>
+  </property>
+   <property name="student_email" type="java.lang.String">
+   	 <column name="student_email">
+   	 	<comment>学生邮箱</comment>
+   	 </column>
+   </property>
+   <property name="photo_path" type="java.lang.String">
+   	 <column name="photo_path">
+   	 	<comment>学生照片路径</comment>
+   	 </column>
+   </property>
+   <property name="sdept" type="java.lang.String">
+   	<column name="sdept">
+   		<comment>学生所在学院</comment>
+   	</column>
+   </property>
+   <property name="smajor" type="java.lang.String">
+   	<column name="smajor">
+   		<comment>学生所在专业</comment>
+   	</column>
+   </property>
+   <property name="date" type="java.sql.Date">
+   	<column name="date">
+   		<comment>注册日期</comment>
+   	</column>
+   </property>
+   <property name="sys_date" type="java.sql.Date">
+   	<column name="sys_date">
+   		<comment>修改日期</comment>
+   	</column>
+   </property>
+   <property name="flag" type="java.lang.Integer">
+   	<column name="flag">
+   		<comment>删除标记</comment>
+   	</column>
+   </property>
+   <property name="def1" type="java.lang.String">
+   	<column name="def1">
+   		<comment>备用字段</comment>
+   	</column>
+   </property>
+   <property name="def2" type="java.lang.String">
+   	<column name="def2">
+   		<comment>备用字段</comment>
+   	</column>
+   </property>
+   <property name="def3" type="java.lang.String">
+   	<column name="def3">
+   		<comment>备用字段</comment>
+   	</column>
+   </property>
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="entity.Role_weight" table="role_weight">
+  <id name="role_weight_id" type="java.lang.Integer">
+   <column name="role_weight_id"/>
+   <generator class="identity"/>
+  </id>	
+  <property name="role_id" type="java.lang.Integer">
+  	<column name="role_id">
+  		<comment>学号</comment>
+  	</column>
+  </property>
+  <property name="weight_id" type="java.lang.Integer">
+  	<column name="weight_id">
+  		<comment>学号</comment>
+  	</column>
+  </property>
+  <property name="weight" type="java.lang.Integer">
+  	<column name="weight">
+  		<comment>学号</comment>
+  	</column>
+  </property>   
+  <property name="date" type="java.util.Date">
+  	<column name="date">
+  		<comment>学号</comment>
+  	</column>
+  </property>  
+  <property name="sys_date" type="java.util.Date">
+  	<column name="sys_date">
+  		<comment>学号</comment>
+  	</column>
+  </property>  
+  <property name="flag" type="java.lang.Integer">
+  	<column name="flag">
+  		<comment>学号</comment>
+  	</column>
+  </property>
+ 
+</class>
+
+</hibernate-mapping>
