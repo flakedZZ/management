@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+h1{
+	font-size:25pt;
+	text-align:center;
+	font-family :微软雅黑;
+}
+h2{
+	font-size:15pt;
+	margin-left:100px;
+}
+#3_TiJiao{
+	margin-left:100px;
+	margin-right:70px;
+}
+div{
+	margin-left:100px;
+}
