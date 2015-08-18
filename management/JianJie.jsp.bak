@@ -46,5 +46,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <!-- 第一个按键ID属性为 3_TiJiao 第二个按键ID属性为3_FanHui -->
    <input type="button" id="3_TiJiao" value="我要报名">
    <input type="button" id="3_FanHui" value="返回">
-   
 </html>
