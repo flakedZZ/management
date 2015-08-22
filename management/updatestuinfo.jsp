@@ -147,9 +147,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                	     性别 / sex
                                 </label>
                                 <div class="am-u-sm-9">
-                               
-                                 <input type="radio" name="student_sex" value="男"  checked>男
 
+                                    <input type="radio" name="student_sex" value="男"  checked>男
                                     </input>
                                   
                                     <input type="radio" name="student_sex" value="女">女
