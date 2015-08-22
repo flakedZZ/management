@@ -158,12 +158,14 @@ public class RegisterUserAction {
 			date = df.parse(tmp);
 			} catch(Exception ex) {
 			}
+		System.out.print(student_name);
 		//默认注册用户权限为1【学生权限
 		Student_info stuInfo=new Student_info(student_name,student_number,student_sex,
 				student_qq, student_phone, student_email, photo_path, sdept, smajor, date);
 		User user=new User(username, password, date, student_number);
 		//存入数据库
 		student_infoService.saveStu(stuInfo);
+		user.setFlag(1);
 		userService.saveUser(user);
 		return "success";
 	}

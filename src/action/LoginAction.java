@@ -99,7 +99,9 @@ public class LoginAction {
 		Iterator<User> it=list.iterator();
 		while(it.hasNext()){
 			u=(User)it.next();
-			if(username.trim().equals(u.getUsername())&&password.trim().equals(u.getPassword())){
+			System.out.println(u.getUsername());
+			if(username.trim().equals(u.getUsername())&&password.trim().equals(u.getPassword()))
+			{
 				session.put("username", u.getUsername());
 				Student_info stu=stuInfoService.getStu(u.getStudent_number());
 				session.put("student_name", stu.getStudent_name());
@@ -112,14 +114,18 @@ public class LoginAction {
 				session.put("student_qq", stu.getStudent_qq());
 				session.put("student_sex", stu.getStudent_sex());
 				
-				if(u.getFlag()==1){
+				if(u.getFlag()==1)
+				{
 					session.put("pression", "student");
-					return "stusuccess";}
-				if(u.getFlag()==2){
+					return "stusuccess";
+				}
+				if(u.getFlag()==2)
+				{
 					session.put("pression", "op");
 					return "opsuccess";
 				}
-				if(u.getFlag()==3){
+				if(u.getFlag()==3)
+				{
 					session.put("pression", "superop");
 					return "superop";
 				}
@@ -127,7 +133,7 @@ public class LoginAction {
 					return "failer";
 			}
 			else{
-				return "failer";
+				continue;
 			}
 			
 		}

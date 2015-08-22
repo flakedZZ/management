@@ -13,7 +13,7 @@
 			value="jdbc:mysql://localhost:3306/management">
 		</property>
 		<property name="username" value="root"></property>
-		<property name="password" value="tiger"></property>
+		<property name="password" value="m1234"></property>
 	</bean>
 	
 	
