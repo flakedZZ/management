@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -143,7 +144,8 @@ public class UpdateStuInfoAction {
 	}
 	
 	public String execute(){
-		
+		ActionContext actionContext = ActionContext.getContext();
+        Map session = actionContext.getSession();
 		
 		
 		Student_info result=student_infoService.getStu(student_number);
@@ -156,7 +158,14 @@ public class UpdateStuInfoAction {
 		result.setStudent_phone(student_phone);
 		result.setStudent_qq(student_qq);
 		result.setStudent_sex(student_sex);
-		
+		session.put("student_name", student_name);
+		session.put("photo_path", photo_path);
+		session.put("sdept", sdept);
+		session.put("smajor", smajor);
+		session.put("student_email", student_email);
+		session.put("student_phone", student_phone);
+		session.put("student_qq", student_qq);
+		session.put("student_sex", student_sex);
 		//如果数据库中有这个ID的对象
 		student_infoService.updateStu(result);//就更新这个对象
 		
