@@ -1,6 +1,8 @@
 package entity;
 
-import java.sql.Date;
+import java.util.Date;
+
+
 
 public class Sign_info {
 	private int signment_id;
@@ -84,6 +86,19 @@ public class Sign_info {
 		this.other = other;
 		this.date = date;
 	}
+	public Sign_info(int signment_id, int student_id, int department_id,
+			String personal_intro, int adjust, Date date,Date sys_date) {
+		super();
+		this.signment_id=signment_id;
+		this.student_id = student_id;
+		this.department_id = department_id;
+		this.personal_intro = personal_intro;
+		this.adjust = adjust;		
+		this.date = date;
+		this.sys_date=sys_date;
+	}
+	
+	
 	
 	 
 	

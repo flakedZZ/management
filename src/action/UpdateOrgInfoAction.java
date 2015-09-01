@@ -1,10 +1,16 @@
 package action;
 
 import java.util.Date;
+import java.util.Map;
 
 import service.Org_infoService;
 
+import com.opensymphony.xwork2.ActionContext;
+
+import entity.Org_info;
+
 public class UpdateOrgInfoAction {
+	private Org_info org;
 	private int org_id;
 	private String org_name;
 	private String org_admin;
@@ -118,10 +124,35 @@ public class UpdateOrgInfoAction {
 		this.def3 = def3;
 	}
 	
+	
+	public Org_info getOrg() {
+		return org;
+	}
+	public void setOrg(Org_info org) {
+		this.org = org;
+	}
+
+
 	//×¢Èë
 	private Org_infoService org_infoService;
 	public void setOrg_infoService( Org_infoService org_infoService){
 		this.org_infoService=org_infoService;
+		
+	}
+	public String execute()
+	{
+		ActionContext actionContext = ActionContext.getContext();
+        Map session = actionContext.getSession();
+       org=(Org_info)session.get("orgInfo");
+        org.setOrg_name(org_name);
+        org.setOrg_admin(org_admin);
+        org.setOrg_qq(org_qq);
+        org.setOrg_email(org_email);
+        org.setOrg_intro(org_intro);
+        session.put("orgInfo", org);
+        
+        org_infoService.update(org);
+		return "success";
 	}
 
 }

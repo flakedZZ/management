@@ -21,8 +21,59 @@
 <result name="success">/updateclear.jsp</result>
 <result name="failer">/failer.jsp</result>
 </action>
-<action name="showlist" class="action.ShowListAction">
-<result name="success">/index.jsp</result>
+<action name="showUserList" class="action.ShowUsersListAction">
+<result name="success">showUsersList.jsp</result>
+</action>
+<action name="showOrgList" class="action.ShowOrgListAction">
+<result name="success">showOrgsList.jsp</result>
+</action>
+<action name="registerOrg" class="action.RegisterOrgAction">
+<result name="success">JianJie.jsp</result>
+</action>
+<action name="findAllorgs" class="action.FindAllOrgsAction" >
+<result name="success">registerDepart.jsp</result>
+</action>
+<action name="registerDepart" class="action.RegisterDepartAction">
+<result name="success">departJianJie.jsp</result>
+</action>
+<action name="showOrgMore" class="action.ShowOrgMoreAction"> 
+<result name="success">JianJie.jsp</result>
+<result name="ShowOrgById">ShowOrgJianJie.jsp</result>
+</action>
+<action name="updateOrgInfoAction" class="action.UpdateOrgInfoAction">
+<result name="success">JianJie.jsp</result>
+</action>
+<action name="deleteOrgInfoAction" class="action.DeleteOrgInfoAction">
+<result name="success" type="chain">showOrgList</result>
+</action>
+<action name="showDepartListByOrAction" class="action.depart.ShowDepartListByOrAction">
+<result name="success">showDepartsList.jsp</result>
+
+</action>
+<action name="showDepartMoreAction" class="action.depart.ShowDepartMoreAction">
+<result name="success">departJianJie.jsp</result>
+<result name="ShowDepartMoreById">showDepartJianJie.jsp</result>
+</action>
+<action name="updateDepartInfoAction" class="action.depart.UpdateDepartInfoAction"> 
+<result name="success">departJianJie.jsp</result>
+</action>
+<action name="deleteDepartAction" class="action.depart.DeleteDepartAction">
+<result name="success" type="chain">showDepartListByOrAction</result>
+</action>
+<action name="registerSignInfoAction" class="action.Sign_info.RegisterSignInfoAction">
+<result name="success">index.jsp</result>
+</action>
+<action name="showSignListByStuIdAction" class="action.Sign_info.ShowSignListByStuIdAction">
+<result name="success">showSignListByStuId.jsp</result>
+<result name="findAllSigns">CheckSignListByStuId.jsp</result>
+<result name="updateSignInfo">UpdateSignListByStuId.jsp</result>
+<result name="deleteSignInfo" type="chain">showSignListByStuIdAction</result>
+<result name="saveUpdateSignInfo"  type="chain">showSignListByStuIdAction</result>
+<result name="showStuInfo" >showSignStuinfo.jsp</result>
+</action>
+
+<action name="updateSignInfoAction" class="action.Sign_info.UpdateSignInfoAction">
+<result name="success"  type="chain">showSignListByStuIdAction</result>
 </action>
 </package>
 </struts>    

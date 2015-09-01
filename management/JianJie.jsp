@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"isELIgnored="false"%>
+<%@ page language="java" import="java.util.*,entity.*" pageEncoding="UTF-8"isELIgnored="false"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -18,10 +18,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
 	
 	<link rel="stylesheet" type="text/css" href="css/JianJie.css">
-
+  
 
   </head>
-  
+
   <body>
     <!-- 我做的修改
          1.头文件加了一个 isELIgnored=faulse
@@ -29,21 +29,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          3.用了个EL语句输出了数据字典里组织信息表里的一些信息
           -->
           
-          <%!
-          String o_name="12345";
-          String o_admin="sbsbsb";
-          int o_qq=12345;
-          String o_intro="qwertyuik";
-          
-           %>
+  
       <h1>高校社团组织招新系统</h1>
       <hr width="900">
-      <h2>组织名称:</h2><div><%=o_name %> </div><br>
-      <h2>组织负责人:</h2><div><%=o_admin %></div><br>
-      <h2>官方QQ群:</h2><div><%=o_qq %></div><br>
-      <h2>组织简介:</h2><div><%=o_intro%></div><br>
+      <h2>组织名称:</h2><div> ${org_name }</div><br>
+      <h2>组织负责人:</h2><div>${org_admin }</div><br>
+      <h2>官方QQ群:</h2><div>${org_qq }</div><br>
+      <h2>组织邮箱:</h2><div>${org_email }</div><br>
+       <h2>组织简介:</h2><div>${org_intro }</div><br>
   </body>
   <!-- 第一个按键ID属性为 3_TiJiao 第二个按键ID属性为3_FanHui -->
-   <input type="button" id="3_TiJiao" value="我要报名">
-   <input type="button" id="3_FanHui" value="返回">
+   <a href="UpdateOrg.jsp"><input type="button"  value="修改"  ></a>
+  <a href="behind index.jsp"> <input type="button" value="返回"></a>
 </html>

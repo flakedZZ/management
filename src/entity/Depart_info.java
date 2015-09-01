@@ -125,6 +125,19 @@ public class Depart_info {
 		this.def2 = def2;
 		this.def3 = def3;
 	}
+	public Depart_info(int department_id, String department_name, int org_id,
+			String department_admin, int department_qqgroup,
+			String department_intro, Date date) {
+		super();
+		this.department_id = department_id;
+		this.department_name = department_name;
+		this.org_id = org_id;
+		this.department_admin = department_admin;
+		this.department_qqgroup = department_qqgroup;
+		this.department_intro = department_intro;
+		this.date = date;
+	}
+	
 
 	
 	

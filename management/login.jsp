@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </div>
                             </div>
                             
-
+						<font size="6"  face="楷体"><a href="help.jsp"><Strong>先看再登录！！！</Strong></a></font>
                             <div class="am-form-group">
                                 <div class="am-u-sm-9 am-u-sm-push-3">
                                     <button type="submit" class="am-btn am-btn-primary">

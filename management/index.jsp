@@ -59,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="light-line"></div>
         </li>
   	<li><div class="left-side">
-       	   	 查看报名信息
+       	   	<a href="showSignListByStuIdAction?student_id=<%=session.getAttribute("student_number")  %>"> 查看报名信息</a>
             </div><!--left-side-->
             <div class="right-side">
             <span class="green"><a href="<%=basePath%>">修改报名信息</a></span>
@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="light-line"></div>
         </li>
         <li><div class="left-side">
-           进入管理面板
+          <a href="behind index.jsp"> 进入管理面板</a>
             </div><!--left-side-->
             <div class="right-side">
             <span class="green"><a href="<%=basePath%>logout.jsp">注销</a></span>
@@ -113,7 +113,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="portfolio">
         <ul>
             <li onClick="TINY.box.show({image:'images/校学生会.jpg',boxid:'frameless',animate:true,openjs:function(){openJS()}})">
-                <a href="#"><img src="images/校学生会.jpg" alt="poster"/></a>
+                <a href="showOrgMore!ShowOrgById.action?org_id=<%=11%>"><img src="images/校学生会.jpg" alt="poster"/></a>
                 <div class="caption">
                     <p class="caption-inside">校学生会</p>
                 </div>
@@ -141,7 +141,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </li>
             
             <li  onclick="TINY.box.show({image:'images/武协.jpg',boxid:'frameless',animate:true,openjs:function(){openJS()}})">
-                <a href="#"><img src="images/武协.jpg" alt="poster" /></a>
+                <a href="showOrgMore!ShowOrgById.action?org_id=<%=3 %>"><img src="images/武协.jpg" alt="poster" /></a>
                 <div class="caption">
                     <p class="caption-inside">武协</p>
                 </div>

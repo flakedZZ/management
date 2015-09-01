@@ -39,6 +39,7 @@
 		<value>entity/Sign_info.hbm.xml</value>
 		<value>entity/Depart_info.hbm.xml</value>
 		<value>entity/Org_info.hbm.xml</value>
+	
 	</list>
 </property>
 	</bean>
@@ -62,6 +63,27 @@
 	</bean>
 	<bean id="student_infoService" class="service.Student_infoServiceImpl">
 	<property name="student_infoDAO" ref="student_infoDAO"></property>
+	</bean>
+	<bean id="depart_infoDAO" class="dao.Depart_infoDAOImpl">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="depart_infoService" class="service.Depart_infoServiceImpl">
+	<property name="departInfoDAO" ref="depart_infoDAO"></property>
+	</bean>
+	<bean id="sign_infoDAO" class="dao.Sign_infoDAOImpl">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="sign_infoService" class="service.Sign_infoServiceImpl">
+	<property name="signInfoDAO" ref="sign_infoDAO"></property>
+	</bean>
+	<bean id="registerDepartAction" class="action.RegisterDepartAction">
+	<property name="org_infoService" ref="org_infoService"></property>
+	<property name="depart_infoService" ref="depart_infoService"></property>
+	</bean>
+	<bean id="registerSignInfoAction" class="action.Sign_info.RegisterSignInfoAction">
+	<property name="sign_infoService" ref="sign_infoService"></property>
+	
 	</bean>
 	<bean id="updateStuInfoAction" class="action.UpdateStuInfoAction">
 	<property name="student_infoService" ref="student_infoService"></property>
@@ -88,10 +110,24 @@
 	<bean id="updateOrg_infoAction" class="action.UpdateOrgInfoAction">
 	<property name="org_infoService" ref="org_infoService"></property>
 	</bean>
-	<bean id="showListAction" class="action.ShowListAction">
+	<bean id="showOrgListAction" class="action.ShowOrgListAction">
 	<property name="org_infoService" ref="org_infoService"></property>
 	</bean>
+	<bean id="showSignListByStuIdAction" class="action.Sign_info.ShowSignListByStuIdAction">
+	<property name="sign_infoService" ref="sign_infoService"></property>
+	<property name="org_infoService" ref="org_infoService"></property>
+	<property name="depart_infoService" ref="depart_infoService"></property>
+	<property name="student_infoService"  ref="student_infoService"></property>
+	</bean>
+	<bean id="updateSignInfoAction" class="action.Sign_info.UpdateSignInfoAction">
+	<property name="sign_infoService" ref="sign_infoService"></property>
+	</bean>
+	<bean id="showDepartListByOrAction"  class="action.depart.ShowDepartListByOrAction">
+	<property name="depart_infoService" ref="depart_infoService"></property>
+	<property name="org_infoService"    ref="org_infoService"></property>
+	</bean>
 	</beans>
+	
 	
 	
 	

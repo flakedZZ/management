@@ -141,7 +141,16 @@ public class Org_info {
 		this.def2 = def2;
 		this.def3 = def3;
 	}
+	public Org_info(int org_id, String org_name, String org_admin,
+			String org_intro, int org_qq, String org_email, Date date) {
+		super();
+		this.org_id = org_id;
+		this.org_name = org_name;
+		this.org_admin = org_admin;
+		this.org_intro = org_intro;
+		this.org_qq = org_qq;
+		this.org_email = org_email;
+		this.date = date;
+	}
 	
-	
-
 }
