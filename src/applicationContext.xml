@@ -13,7 +13,7 @@
 			value="jdbc:mysql://localhost:3306/management">
 		</property>
 		<property name="username" value="root"></property>
-		<property name="password" value="m1234"></property>
+		<property name="password" value="tiger"></property>
 	</bean>
 	
 	
@@ -31,7 +31,7 @@
 			</props>
 		</property>
 		
-		<!-- 指定hibernate映射文件的路径 -->
+		<!-- 指定hibernate映射文件的路�?-->
 <property name="mappingResources">
 	<list>
 		<value>entity/User.hbm.xml</value>
