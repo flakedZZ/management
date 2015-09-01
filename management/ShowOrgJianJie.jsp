@@ -35,7 +35,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
       <h1>高校社团组织招新系统</h1>
       <hr width="900">
-      <h2>组织名称:</h2><div><%=orgInfo.getOrg_name() %></div><br>
+      <h2>组织名称:</h2>
+      <div><%=orgInfo.getOrg_name() %></div><br>
       <h2>组织负责人:</h2><div><%=orgInfo.getOrg_admin() %></div><br>
       <h2>官方QQ群:</h2><div><%=orgInfo.getOrg_qq() %></div><br>
       <h2>组织邮箱:</h2><div><%=orgInfo.getOrg_email() %></div><br>
