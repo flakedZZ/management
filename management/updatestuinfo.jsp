@@ -43,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         
                     </div>
                     <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-                        <form class="am-form am-form-horizontal" action="updateStuInfo.action" method="post">
+                        <form class="am-form am-form-horizontal" action="updateStuInfo.action" method="post" enctype="multipart/form-data">
                             <div class="am-form-group">
                                 <label for="user-name" class="am-u-sm-3 am-form-label">
                          	           姓名 / Name
@@ -56,7 +56,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </div>
                             </div>
 
-
+							<div class="am-form-group">
+                                <label for="user-weibo" class="am-u-sm-3 am-form-label">
+                               	     照片 / Student Photo
+                                </label>
+                               
+                                <div class="am-u-sm-9">
+                                 <img  src=<%=session.getAttribute("photo_path") %>   width="200"  height="200"><br>
+                                  更换照片 <input type="file" name="image"/ >
+                                </div>
+                            </div>
 							<div class="am-form-group">
                                 <label for="user-weibo" class="am-u-sm-3 am-form-label">
                                	     学号 / Student sno
@@ -132,14 +141,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             </div>
 
 
-                            <div class="am-form-group">
-                                <label for="user-weibo" class="am-u-sm-3 am-form-label">
-                               	     照片 / Student Photo
-                                </label>
-                                <div class="am-u-sm-9">
-                                    <input type="file" name="photo_path"/ >
-                                </div>
-                            </div>
+                            
 
 
                             <div class="am-form-group">

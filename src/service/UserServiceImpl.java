@@ -13,10 +13,17 @@ public class UserServiceImpl implements UserService{
 	}
 	@Override
 	//ÃÌº””√ªß
-	public void saveUser(User user) {
+	public int saveUser(User user) {
 		// TODO Auto-generated method stub
+		int flag=1;
 		if(userDAO.findById(user.getUser_id())==null){
 			userDAO.save(user);
+			return  flag;
+		}
+		else
+		{
+			 flag=0;
+			return flag;
 		}
 	}
 

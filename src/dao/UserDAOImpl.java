@@ -11,9 +11,17 @@ import entity.User;
 public class UserDAOImpl extends HibernateDaoSupport implements UserDAO{
 
 	@Override
-	public void save(User user) {
+	public int  save(User user) {
 		// TODO Auto-generated method stub
-		this.getHibernateTemplate().save(user);
+		int flag=0;
+		try {
+			this.getHibernateTemplate().save(user);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			flag=1;
+		}
+		return flag;
 	}
 
 	@Override

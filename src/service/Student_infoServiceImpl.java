@@ -13,11 +13,18 @@ public class Student_infoServiceImpl implements Student_infoService{
 		this.stuInfoDAO=stuInfoDAO;
 	}
 	@Override
-	public void saveStu(Student_info stu) {
+	public int  saveStu(Student_info stu) {
 		// TODO Auto-generated method stub
+		int flag=1;
 		if(stuInfoDAO.findById(stu.getStudent_id())==null){
-			stuInfoDAO.save(stu);
+			 stuInfoDAO.save(stu);
+			 return flag;
 		}
+		else
+			{
+				flag=0;
+				return flag;
+			}
 	}
 
 	@Override
@@ -27,10 +34,14 @@ public class Student_infoServiceImpl implements Student_infoService{
 	}
 
 	@Override
-	public void delStu(int id) {
+	public String delStu(int id) {
 		// TODO Auto-generated method stub
 		if(stuInfoDAO.findById(id)!=null){
-			stuInfoDAO.delStudentInfo(id);
+			return stuInfoDAO.delStudentInfo(id);
+		}
+		else
+		{
+			return null;
 		}
 	}
 
@@ -40,6 +51,7 @@ public class Student_infoServiceImpl implements Student_infoService{
 		if(stuInfoDAO.findById(stu.getStudent_id())!=null){
 			stuInfoDAO.update(stu);
 		}
+		
 	}
 
 	@Override

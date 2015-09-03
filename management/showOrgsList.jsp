@@ -28,8 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <font color="red" face="楷体"><h1 align="center">组织信息一览</h1></font>
   <hr style="height: 46px; ">
   <table border="1" bordercolor="blue" align="center">
-  <tr><th>组织编号</th><th>组织名称</th><th>负责人</th><th>官方QQ群</th>
-  <th>邮箱</th><th>更多</th><th>删除</th><th>部门信息</th></tr>
+  <tr><th>组织编号</th><th>组织名称</th><th>负责人</th><th>官方QQ群</th><th>邮箱</th><th>更多</th><th>删除</th><th>部门信息</th></tr>
   <%
   for(Org_info org:list)
   {%>

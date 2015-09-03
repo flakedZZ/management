@@ -13,7 +13,9 @@
 			value="jdbc:mysql://localhost:3306/management">
 		</property>
 		<property name="username" value="root"></property>
-		<property name="password" value="tiger"></property>
+		<property name="password" value="m1234"></property>
+		
+		
 	</bean>
 	
 	
@@ -45,12 +47,13 @@
 	</bean>
 	
 	
-	
+	<bean id="encodingFilter" class="filter.EncodingFilter"></bean>
 	<bean id="userDAO" class="dao.UserDAOImpl">
 	<property name="sessionFactory">
 	<ref bean="sessionFactory"/>
 	</property>
 	</bean>
+	<bean id="fileUtil" class="util.FileUtil"></bean>
 	<bean id="userService" class="service.UserServiceImpl">
 	<property name="userDAO" ref="userDAO"></property>
 	</bean>
@@ -83,10 +86,10 @@
 	</bean>
 	<bean id="registerSignInfoAction" class="action.Sign_info.RegisterSignInfoAction">
 	<property name="sign_infoService" ref="sign_infoService"></property>
-	
 	</bean>
 	<bean id="updateStuInfoAction" class="action.UpdateStuInfoAction">
 	<property name="student_infoService" ref="student_infoService"></property>
+	<property name="fileUtil" ref="fileUtil"></property>
 	</bean>
 	<bean id="saveStuInfoAction" class="action.SaveStuInfoAction">
 	<property name="student_infoService" ref="student_infoService"></property>
@@ -94,6 +97,7 @@
 	<bean id="registerUserAction" class="action.RegisterUserAction">
 	<property name="student_infoService" ref="student_infoService"></property>
 	<property name="userService" ref="userService"></property>
+	<property name="fileUtil" ref="fileUtil"></property>
 	</bean>
 	<bean id="org_infoDAO" class="dao.Org_infoDAOImpl">
 	<property name="sessionFactory" ref="sessionFactory"></property>

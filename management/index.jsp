@@ -59,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="light-line"></div>
         </li>
   	<li><div class="left-side">
-       	   	<a href="showSignListByStuIdAction"> 查看报名信息</a>
+       	   	<a href="showSignListByStuIdAction?student_id=<%=session.getAttribute("student_number")  %>"> 查看报名信息</a>
             </div><!--left-side-->
             <div class="right-side">
             <span class="green"><a href="<%=basePath%>">修改报名信息</a></span>

@@ -55,7 +55,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 		<%=student_info.getStudent_name()   %>
                                 </div>
                             </div>
-
+								<div class="am-form-group">
+                                <label for="user-weibo" class="am-u-sm-3 am-form-label">
+                               	     照片 / Student photo
+                                </label>
+                                <div class="am-u-sm-9">
+                                <img src= <%=student_info.getPhoto_path() %> width="200"  height="200">
+                                  
+                                </div>
+                            </div>
 
 							<div class="am-form-group">
                                 <label for="user-weibo" class="am-u-sm-3 am-form-label">

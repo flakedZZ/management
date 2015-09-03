@@ -11,9 +11,16 @@ import entity.User;
 public class Student_infoDAOImpl extends HibernateDaoSupport implements Student_infoDAO{
 
 	@Override
-	public void save(Student_info stu) {
+	public int save(Student_info stu) {
 		// TODO Auto-generated method stub
-		this.getHibernateTemplate().save(stu);
+		int flag=1;
+		try{
+			this.getHibernateTemplate().save(stu);
+		}catch(Exception e){
+			e.printStackTrace();
+			flag=0;
+		}
+		return flag;
 	}
 
 	//@Override
@@ -25,15 +32,24 @@ public class Student_infoDAOImpl extends HibernateDaoSupport implements Student_
 	//}
 
 	@Override
-	public void delStudentInfo(int id) {
+	public String delStudentInfo(int id) {
 		// TODO Auto-generated method stub
+		//1.返回目前文件路径
+		String photo_path= findById(id).getPhoto_path();
+		//2,。删除数据库里面的信息
 		this.getHibernateTemplate().delete(findById(id));
+		return photo_path;
 	}
 
 	@Override
 	public void update(Student_info stu) {
 		// TODO Auto-generated method stub
+		
+		
+	
 		this.getHibernateTemplate().update(stu);
+	
+	
 	}
 	
 

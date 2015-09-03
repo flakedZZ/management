@@ -1,17 +1,24 @@
 package action;
 
 
+import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import entity.Student_info;
-import entity.User;
+import org.apache.struts2.ServletActionContext;
+
 import service.Student_infoService;
 import service.UserService;
+import util.FileUtil;
+import entity.Student_info;
+import entity.User;
 
 public class RegisterUserAction {
+	private FileUtil fileUtil;
 	private int user_id	;//用户id
+	private File image;//文件类型
+	private String imageFileName;//文件名
 	private String username;	//用户名
 	private String password;	//密码
 	private int flag;	//0为删除 1为学生 2为管理员
@@ -29,6 +36,19 @@ public class RegisterUserAction {
 	private String def1;//这三个是备用字段
 	private String def2;
 	private String def3;
+	
+	public File getImage() {
+		return image;
+	}
+	public void setImage(File image) {
+		this.image = image;
+	}
+	public String getImageFileName() {
+		return imageFileName;
+	}
+	public void setImageFileName(String imageFileName) {
+		this.imageFileName = imageFileName;
+	}
 	public int getUser_id() {
 		return user_id;
 	}
@@ -97,7 +117,7 @@ public class RegisterUserAction {
 		this.student_email = student_email;
 	}
 	public String getPhoto_path() {
-		return photo_path;
+		return ServletActionContext.getServletContext().getRealPath(photo_path);
 	}
 	public void setPhoto_path(String photo_path) {
 		this.photo_path = photo_path;
@@ -139,6 +159,13 @@ public class RegisterUserAction {
 		this.def3 = def3;
 	}
 	
+	public FileUtil getFileUtil() {
+		return fileUtil;
+	}
+	public void setFileUtil(FileUtil fileUtil) {
+		this.fileUtil = fileUtil;
+	}
+
 	//定义业务逻辑组件
 	private UserService userService;
 	private Student_infoService student_infoService;
@@ -158,15 +185,29 @@ public class RegisterUserAction {
 			date = df.parse(tmp);
 			} catch(Exception ex) {
 			}
-		System.out.print(student_name);
+		//System.out.print(student_name);
+		//照片上传部分
+		String fileName = fileUtil.getFileName(imageFileName);//给文件名生成新名字，，
+		String image_url = photo_path+ fileName;
+		//真是路径
+		String realPath =getPhoto_path();
+		System.out.println(realPath);
+		
 		//默认注册用户权限为1【学生权限
 		Student_info stuInfo=new Student_info(student_name,student_number,student_sex,
-				student_qq, student_phone, student_email, photo_path, sdept, smajor, date);
+				student_qq, student_phone, student_email, image_url, sdept, smajor, date);
 		User user=new User(username, password, date, student_number);
-		//存入数据库
-		student_infoService.saveStu(stuInfo);
 		user.setFlag(1);
-		userService.saveUser(user);
-		return "success";
+		//存入数据库
+
+		if(student_infoService.saveStu(stuInfo)==1&&userService.saveUser(user)==1)
+		{
+			
+			fileUtil.uploadFile(image, fileName, realPath);
+			System.out.println("文件上传了");
+			return "success";
+		}
+		System.out.println("文件上传失败");
+		return "failer";
 	}
 }
