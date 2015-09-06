@@ -130,7 +130,14 @@
 	<property name="depart_infoService" ref="depart_infoService"></property>
 	<property name="org_infoService"    ref="org_infoService"></property>
 	</bean>
+	<!-- 发送邮件使用的工具类 -->
+	<bean id="javaMail" class="util.MailUtil"></bean>
+	<!-- 发送邮件测试用的action -->
+	<bean id="mailAction" class="action.TestMailAction">
+	<property name="mailUtil" ref="javaMail"></property>
+	</bean>
 	</beans>
+
 	
 	
 	

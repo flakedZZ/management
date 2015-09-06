@@ -191,14 +191,9 @@ public class UpdateStuInfoAction {
 		
   		 if(image == null){
   		    String new_image_url=result.getPhoto_path();
-  			session.put("student_name", student_name);
+  			
   			session.put("photo_path", new_image_url);
-  			session.put("sdept", sdept);
-  			session.put("smajor", smajor);
-  			session.put("student_email", student_email);
-  			session.put("student_phone", student_phone);
-  			session.put("student_qq", student_qq);
-  			session.put("student_sex", student_sex);
+  			
 		
   			student_infoService.updateStu(result);//就更新这个对象
   			return "success";
@@ -209,14 +204,7 @@ public class UpdateStuInfoAction {
 		String newFileName = fileUtil.getFileName(imageFileName);
 		 String new_image_url = photo_path + newFileName;
 		result.setPhoto_path(new_image_url);
-		session.put("student_name", student_name);
-		session.put("photo_path", new_image_url);
-		session.put("sdept", sdept);
-		session.put("smajor", smajor);
-		session.put("student_email", student_email);
-		session.put("student_phone", student_phone);
-		session.put("student_qq", student_qq);
-		session.put("student_sex", student_sex);
+		session.put("photo_path",new_image_url);
 		
 		student_infoService.updateStu(result);//就更新这个对象
 		
