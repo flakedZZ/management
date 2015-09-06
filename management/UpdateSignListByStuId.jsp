@@ -31,6 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	List<Depart_info> list=depart_infoService.findSomeByOrg_id(depart_infoService.getDepartInfo(sign.getDepartment_id()).getOrg_id());
   	 Student_infoService student_infoService=(Student_infoService)request.getAttribute("student_infoService");
    %>
+   <form action="updateSignInfoAction" method=post>
    <h1>报名信息信息一览</h1>
   <hr style="height: 46px; ">
   <table border="1">
@@ -63,11 +64,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </th>
  <th><%=sign.getDate()   %></th>
  <th>更多</th>
-<th><a href="updateSignInfoAction">保存</a></th>
+<th><input type=submit value="提交"></th>
 
 
  </tr> 
   
    </table>
+   
+   </form>
   </body>
 </html>

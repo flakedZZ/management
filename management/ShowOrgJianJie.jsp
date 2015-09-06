@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           Org_info orgInfo=(Org_info)request.getAttribute("orgInfo");
           List<Depart_info> list =(List<Depart_info>)request.getAttribute("list");
            %>
-  
+      <form method="post">
       <h1>高校社团组织招新系统</h1>
       <hr width="900">
       <h2>组织名称:</h2><div><%=orgInfo.getOrg_name() %></div><br>
@@ -53,6 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   								 %>
   								 <tr><th colspan="5"   align="right"><a href="behind index.jsp"><input type="button" value="返回"></a></th></tr>
    					</table>
+   					</form>
        </div><br>
   </body>
   <!-- 第一个按键ID属性为 3_TiJiao 第二个按键ID属性为3_FanHui -->
