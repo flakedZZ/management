@@ -18,7 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <base href="<%=basePath%>">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>部门信息</title>
+  <title>修改部门信息</title>
   <meta name="description" content="这是一个 user 页面">
   <meta name="keywords" content="user">
   <meta name="renderer" content="webkit">
@@ -55,7 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         
                     </div>
                      <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-                        <form class="am-form am-form-horizontal" action="updateDepartInfoAction">
+                        <form class="am-form am-form-horizontal" action="updateDepartInfoAction"  method="post">
                             <div class="am-form-group">
                                 <label for="user-name" class="am-u-sm-3 am-form-label">
                          	     	部门名称 / Department_name

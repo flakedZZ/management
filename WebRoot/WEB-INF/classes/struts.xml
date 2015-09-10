@@ -70,15 +70,13 @@
 <action name="showSignListByStuIdAction" class="action.Sign_info.ShowSignListByStuIdAction">
 <result name="success">showSignListByStuId.jsp</result>
 <result name="findAllSigns">CheckSignListByStuId.jsp</result>
-<result name="updateSignInfo">UpdateSignListByStuId.jsp</result>
 <result name="deleteSignInfo" type="chain">showSignListByStuIdAction</result>
 <result name="saveUpdateSignInfo"  type="chain">showSignListByStuIdAction</result>
 <result name="showStuInfo" >showSignStuinfo.jsp</result>
+<result name="toUpdate">UpdateSignListByStuId.jsp</result>
 </action>
 
-<action name="updateSignInfoAction" class="action.Sign_info.UpdateSignInfoAction">
-<result name="success"  type="chain">showSignListByStuIdAction</result>
-</action>
+
 <action name="sendTestMailAction" class="action.TestMailAction">
 <result name="success">/updateclear.jsp</result>
 <result name="failer">/failer.jsp</result>

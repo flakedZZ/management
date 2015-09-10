@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'behind index.jsp' starting page</title>
+    <title>后台管理页面</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -45,6 +45,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	 <h2>报名管理</h2>
  <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <a href="showSignListByStuIdAction!findAllSigns.action">查看报名信息</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+ <hr style="height: 54px; "/>
+ <p align="center">
+ <a href="index.jsp">返回首页啊</a>
+ </p>
  
   </body>
 </html>

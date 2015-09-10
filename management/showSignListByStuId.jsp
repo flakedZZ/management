@@ -28,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	Depart_infoService  depart_infoService =(Depart_infoService)request.getAttribute("depart_infoService");
   	Org_infoService   org_infoService=(Org_infoService)request.getAttribute("org_infoService");
    %>
-   <h1>报名信息信息一览</h1>
+   <h1>个人报名信息信息一览</h1>
   <hr style="height: 46px; ">
   <table border="1">
   <tr><th>所报组织</th><th>所报部门</th><th>审核状况</th><th>是否调剂</th><th>调剂部门</th><th>日期</th><th>删除</th></tr>
@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <th><%=depart_infoService.getDepartInfo(sign.getDepartment_id()).getDepartment_name()    %></th>
  <th><%=sign.getCheck_state()==0?"未开始审核:请稍等":"正在审核，请耐心等候"   %></th>
  <th><%=sign.getAdjust()==1?"是":"否"  %></th>
-<th><%=sign.getOther()==0?"无被调部门":depart_infoService.findById(sign.getOther())  %></th>
+<th><%=sign.getOther()==0?"无被调部门":depart_infoService.findById(sign.getOther()).getDepartment_name()  %></th>
  <th><%=sign.getDate()   %></th>
  
 
@@ -48,6 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  </tr> 
   <% }
    %>
+   <tr ><th colspan="7"  align="right"><a href="index.jsp">返回</a></th></tr>
    </table>
   </body>
 </html>

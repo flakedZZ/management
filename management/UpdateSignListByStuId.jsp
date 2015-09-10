@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'showUsersList.jsp' starting page</title>
+    <title>后台审核报名信息</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	List<Depart_info> list=depart_infoService.findSomeByOrg_id(depart_infoService.getDepartInfo(sign.getDepartment_id()).getOrg_id());
   	 Student_infoService student_infoService=(Student_infoService)request.getAttribute("student_infoService");
    %>
-   <form action="updateSignInfoAction" method=post>
+   <form action="showSignListByStuIdAction!updateSignInfo.action" method="post">
    <h1>报名信息信息一览</h1>
   <hr style="height: 46px; ">
   <table border="1">
@@ -54,6 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <th><%=sign.getAdjust()==1?"是":"否"  %></th>
 <th>
 	<select name="other">
+	<option value=0>--请选择--</option>
 	<%
 			for(Depart_info depart:list)
 			{%>

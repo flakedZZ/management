@@ -151,10 +151,17 @@ public class ShowSignListByStuIdAction{
 	{
 		ActionContext actionContext = ActionContext.getContext();
         Map session = actionContext.getSession();
-		sign=sign_infoService.findById(signment_id);
+      //根据传过来的报名信息id值找到对应的报名信息 
+		sign=(Sign_info)session.get("sign");
+		//修改该对象里面的属性值
+		sign.setCheck_state(check_state);
+		sign.setOther(other);
+		//然后再调用修改方法，完成修改
+		sign_infoService.update(sign);
+		//讲session里面的值替换掉
 	    session.put("sign", sign);
 		
-		return "updateSignInfo";
+		return findAllSigns();
 	}
 	public String deleteSignInfo()
 	{
@@ -183,5 +190,15 @@ public class ShowSignListByStuIdAction{
 		sign=sign_infoService.findById(signment_id);
 		student_info=student_infoService.getStu(sign.getStudent_id());
 		return "showStuInfo";
+	}
+	public String toUpdate()
+	{
+		ActionContext actionContext = ActionContext.getContext();
+        Map session = actionContext.getSession();
+      //根据传过来的报名信息id值找到对应的报名信息 
+		sign=sign_infoService.findById(signment_id);
+		//将该对象放入session中
+		session.put("sign", sign);
+		return "toUpdate";
 	}
 }

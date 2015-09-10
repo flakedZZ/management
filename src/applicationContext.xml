@@ -10,12 +10,12 @@
 		class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" /> 
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/management">
+			value="jdbc:mysql://localhost:3306/management?characterEncoding=UTF-8">
 		</property>
+	
 		<property name="username" value="root"></property>
 		<property name="password" value="tiger"></property>
-		
-		
+
 	</bean>
 	
 	
@@ -33,7 +33,7 @@
 			</props>
 		</property>
 		
-		<!-- 指定hibernate映射文件的路�?-->
+		<!-- 指定hibernate映射文件的路-->
 <property name="mappingResources">
 	<list>
 		<value>entity/User.hbm.xml</value>
@@ -47,7 +47,7 @@
 	</bean>
 	
 	
-	<bean id="encodingFilter" class="filter.EncodingFilter"></bean>
+	
 	<bean id="userDAO" class="dao.UserDAOImpl">
 	<property name="sessionFactory">
 	<ref bean="sessionFactory"/>

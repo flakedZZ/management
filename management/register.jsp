@@ -49,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         
                     </div>
                     <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-                        <form class="am-form am-form-horizontal" action="registerUser"   method="post" enctype="multipart/form-data">
+                        <form class="am-form am-form-horizontal" action="registerUser"   method="post"   enctype="multipart/form-data">
                         
                         <div class="am-form-group">
                                 <label for="user-name" class="am-u-sm-3 am-form-label">

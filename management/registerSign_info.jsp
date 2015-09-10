@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <base href="<%=basePath%>">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>组织信息</title>
+  <title>注册报名</title>
   <meta name="description" content="这是一个 user 页面">
   <meta name="keywords" content="user">
   <meta name="renderer" content="webkit">
@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         
                     </div>
                     <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-                        <form class="am-form am-form-horizontal" action="registerSignInfoAction">
+                        <form class="am-form am-form-horizontal" action="registerSignInfoAction"  method="post">
                         
                         <div class="am-form-group">
                                 <label for="user-sex" class="am-u-sm-3 am-form-label">

@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'showUsersList.jsp' starting page</title>
+    <title>后台报名信息一览</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -45,15 +45,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <th><%=depart_infoService.getDepartInfo(sign.getDepartment_id()).getDepartment_name()    %></th>
  <th><%=sign.getCheck_state()==0?"未开始审核:请稍等":"正在审核，请耐心等候"   %></th>
  <th><%=sign.getAdjust()==1?"是":"否"  %></th>
-<th><%=sign.getOther()==0?"无被调部门":depart_infoService.findById(sign.getOther())  %></th>
+<th><%=sign.getOther()==0?"无被调部门":depart_infoService.findById(sign.getOther()).getDepartment_name()  %></th>
  <th><%=sign.getDate()   %></th>
  <th><a href="showSignListByStuIdAction!showStuInfo?signment_id=<%=sign.getSignment_id()  %>">更多</a></th>
-<th><a href="showSignListByStuIdAction!updateSignInfo?signment_id=<%=sign.getSignment_id()  %>">审核</a></th>
+<th><a href="showSignListByStuIdAction!toUpdate?signment_id=<%=sign.getSignment_id()  %>">审核</a></th>
  <th><a href="showSignListByStuIdAction!deleteSignInfo?signment_id=<%=sign.getSignment_id()  %>">删除</a></th>
 
  </tr> 
   <% }
    %>
+  <tr ><th colspan="13"  align="right"><a href="behind index.jsp">返回</a></th></tr>
    </table>
   </body>
 </html>

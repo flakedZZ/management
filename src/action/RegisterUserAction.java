@@ -198,6 +198,7 @@ public class RegisterUserAction {
 				student_qq, student_phone, student_email, image_url, sdept, smajor, date);
 		User user=new User(username, password, date, student_number);
 		user.setFlag(1);
+		System.out.println(student_name);
 		//´æÈëÊı¾İ¿â
 
 		if(student_infoService.saveStu(stuInfo)==1&&userService.saveUser(user)==1)

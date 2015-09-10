@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         
                     </div>
                     <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-                        <form class="am-form am-form-horizontal" action="showSignListByStuIdAction!updateSignInfo?signment_id=<%=sign.getSignment_id()%> " method="post">
+                        <form class="am-form am-form-horizontal" action="showSignListByStuIdAction!toUpdate?signment_id=<%=sign.getSignment_id()  %>" method="post">
                             <div class="am-form-group">
                                 <label for="user-name" class="am-u-sm-3 am-form-label">
                          	           姓名 / Name
@@ -142,7 +142,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     
                                 </div>
                             </div>
-
+							
                             <div class="am-form-group">
                                 <div class="am-u-sm-9 am-u-sm-push-3">
                                     <button type="submit" class="am-btn am-btn-primary">

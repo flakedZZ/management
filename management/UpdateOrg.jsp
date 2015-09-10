@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <base href="<%=basePath%>">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>组织信息</title>
+  <title> 修改组织信息</title>
   <meta name="description" content="这是一个 user 页面">
   <meta name="keywords" content="user">
   <meta name="renderer" content="webkit">
@@ -52,7 +52,7 @@ Org_info org =(Org_info)session.getAttribute("orgInfo");
                         
                     </div>
                     <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-                        <form class="am-form am-form-horizontal" action="updateOrgInfoAction">
+                        <form class="am-form am-form-horizontal" action="updateOrgInfoAction"  method="post">
                         
                         <div class="am-form-group">
                                 <label for="user-name" class="am-u-sm-3 am-form-label">
